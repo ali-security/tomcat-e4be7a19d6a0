@@ -554,7 +554,7 @@ class Stream extends AbstractStream implements HeaderEmitter {
         if (headerException == null) {
             return;
         }
-
+        handler.getHpackDecoder().setHeaderEmitter(Http2UpgradeHandler.HEADER_SINK);
         throw headerException;
     }
 
